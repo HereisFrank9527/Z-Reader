@@ -8,6 +8,8 @@
 
 [网站体验](https://z.dgtsr.top/)，下载的文件请在24小时内删除
 
+**作者要准备高考了，项目暂停维护，直接联系我1156574292可以帮你下书**
+
 仅供学习交流使用。
 
 可前往 [Release](https://github.com/HereisFrank9527/Z-Reader/releases) 下载windows版本，支持win7及以上，仅20MB。
