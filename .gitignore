@@ -27,6 +27,7 @@ __pycache__/
 build/
 dist/
 *.egg-info/
+node_modules/
 
 # 测试
 .coverage
@@ -38,3 +39,6 @@ dist/
 *.bak
 *.tmp
 *.db
+zreader.db
+data/
+downloads/

@@ -1,0 +1,20 @@
+{
+  "name": "z-reader-lite",
+  "version": "2.0.0",
+  "private": true,
+  "description": "A lean Node.js rewrite of Z Reader.",
+  "type": "module",
+  "scripts": {
+    "start": "node src/server.js",
+    "dev": "node --watch src/server.js"
+  },
+  "dependencies": {
+    "cheerio": "^1.0.0",
+    "express": "^4.19.2",
+    "iconv-lite": "^0.6.3",
+    "yazl": "^2.5.1"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}

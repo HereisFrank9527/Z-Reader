@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="zh-CN">
 <head>
     <meta charset="UTF-8">
@@ -6,8 +6,10 @@
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
     <meta name="format-detection" content="telephone=no">
-    <meta name="theme-color" content="#00bcd4">
+    <meta name="theme-color" content="#f6f7f9">
     <title>Z Reader - 在线阅读器</title>
+    <link rel="icon" href="/static/icon.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="/static/icon.ico" type="image/x-icon">
     <link rel="stylesheet" href="/static/css/style.css">
     <style>
         /* 阅读器特定样式 */
@@ -33,7 +35,7 @@
         }
 
         .reader-header {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            background: #0f766e;
             color: white;
             padding: 20px;
             text-align: center;
@@ -55,7 +57,7 @@
         .chapter-item {
             padding: 10px 15px;
             margin-bottom: 5px;
-            border-radius: 2px;
+            border-radius: 8px;
             cursor: pointer;
             transition: all 0.3s;
             border: 1px solid transparent;
@@ -63,13 +65,13 @@
 
         .chapter-item:hover {
             background: #e9ecef;
-            border-color: #667eea;
+            border-color: #0f766e;
         }
 
         .chapter-item.active {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            background: #0f766e;
             color: white;
-            border-color: #667eea;
+            border-color: #0f766e;
         }
 
         .chapter-navigation {
@@ -84,14 +86,14 @@
         .nav-btn {
             padding: 10px 20px;
             border: none;
-            border-radius: 4px;
+            border-radius: 8px;
             cursor: pointer;
             transition: all 0.3s;
         }
 
         .nav-btn:hover:not(:disabled) {
             transform: translateY(-2px);
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 12px 28px rgba(21, 31, 46, 0.08);
         }
 
         .nav-btn:disabled {
@@ -100,12 +102,12 @@
         }
 
         .nav-prev {
-            background: #6c757d;
+            background: #475569;
             color: white;
         }
 
         .nav-next {
-            background: #007bff;
+            background: #0f766e;
             color: white;
         }
 
@@ -113,7 +115,7 @@
             margin-bottom: 20px;
             padding: 15px;
             background: white;
-            border-radius: 4px;
+            border-radius: 8px;
             border: 1px solid #ddd;
         }
 
@@ -146,7 +148,7 @@
         .loading-content {
             background: white;
             padding: 30px;
-            border-radius: 4px;
+            border-radius: 8px;
             text-align: center;
         }
 
@@ -154,7 +156,7 @@
             font-size: 1.8em;
             margin-bottom: 20px;
             color: #333;
-            border-bottom: 2px solid #667eea;
+            border-bottom: 2px solid #0f766e;
             padding-bottom: 10px;
         }
 
@@ -170,23 +172,23 @@
             top: 15px;
             left: 15px;
             z-index: 1001;
-            background: #667eea;
+            background: #0f766e;
             color: white;
             border: none;
             width: 44px;
             height: 44px;
-            border-radius: 4px;
+            border-radius: 8px;
             font-size: 20px;
             cursor: pointer;
             padding: 0;
-            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+            box-shadow: 0 12px 28px rgba(21, 31, 46, 0.08);
             transition: all 0.3s ease;
         }
 
         .sidebar-toggle:hover {
             background: #5a6fd8;
             transform: translateY(-1px);
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+            box-shadow: 0 14px 32px rgba(21, 31, 46, 0.12);
         }
 
         /* Mobile sidebar backdrop */
@@ -291,14 +293,14 @@
             right: 10px;
             background: white;
             border: 1px solid #ddd;
-            border-radius: 4px;
+            border-radius: 8px;
             padding: 10px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 12px 28px rgba(21, 31, 46, 0.08);
             z-index: 100;
         }
 
         .font-size-btn {
-            background: #667eea;
+            background: #0f766e;
             color: white;
             border: none;
             width: 30px;
@@ -320,9 +322,9 @@
             right: 20px;
             background: white;
             border: 1px solid #ddd;
-            border-radius: 4px;
+            border-radius: 8px;
             padding: 15px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 12px 28px rgba(21, 31, 46, 0.08);
             z-index: 100;
             min-width: 280px;
             max-width: 320px;
@@ -370,7 +372,7 @@
         }
 
         .tts-btn {
-            background: #667eea;
+            background: #0f766e;
             color: white;
             border: none;
             padding: 8px 12px;
@@ -424,13 +426,13 @@
             flex: 1;
             padding: 4px 8px;
             border: 1px solid #ddd;
-            border-radius: 4px;
+            border-radius: 8px;
             font-size: 0.85em;
         }
 
         .tts-speed-value {
             font-size: 0.8em;
-            color: #667eea;
+            color: #0f766e;
             font-weight: bold;
             min-width: 35px;
             text-align: right;
@@ -453,7 +455,7 @@
 
         .tts-progress-fill {
             height: 100%;
-            background: linear-gradient(90deg, #667eea 0%, #764ba2 100%);
+            background: #0f766e;
             transition: width 0.3s;
             width: 0%;
         }
@@ -466,7 +468,7 @@
 
         /* 文本高亮 */
         .tts-highlight {
-            background: linear-gradient(90deg, #fff59d 0%, #ffeb3b 50%, #fff59d 100%);
+            background: #fff7c2;
             border-radius: 3px;
             padding: 2px 4px;
             transition: all 0.3s;
@@ -477,7 +479,7 @@
             position: fixed;
             bottom: 80px;
             right: 20px;
-            background: #667eea;
+            background: #0f766e;
             color: white;
             border: none;
             width: 44px;
@@ -485,7 +487,7 @@
             border-radius: 50%;
             font-size: 18px;
             cursor: pointer;
-            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+            box-shadow: 0 12px 28px rgba(21, 31, 46, 0.08);
             transition: all 0.3s;
             display: flex;
             align-items: center;
@@ -496,7 +498,7 @@
         .tts-toggle-btn:hover {
             background: #5a6fd8;
             transform: translateY(-1px);
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+            box-shadow: 0 14px 32px rgba(21, 31, 46, 0.12);
         }
 
         .tts-toggle-btn.active {
@@ -928,7 +930,7 @@
         function showError(message) {
             hideLoading();
             document.getElementById('chapter-content').innerHTML = `
-                <div style="text-align: center; color: #f44336; margin-top: 50px; padding: 20px; background: #ffebee; border-radius: 4px;">
+                <div style="text-align: center; color: #f44336; margin-top: 50px; padding: 20px; background: #ffebee; border-radius: 8px;">
                     <h3>错误</h3>
                     <p>${message}</p>
                     <button onclick="location.reload()" class="btn btn-primary" style="margin-top: 15px;">重试</button>
@@ -1442,3 +1444,4 @@
     </script>
 </body>
 </html>
+
