@@ -3,6 +3,7 @@
   "version": "2.0.0",
   "private": true,
   "description": "A lean Node.js rewrite of Z Reader.",
+  "license": "GPL-3.0-only",
   "type": "module",
   "scripts": {
     "start": "node src/server.js",

@@ -6,7 +6,8 @@ const pageTitles = {
     search: '搜索书籍',
     sources: '书源管理',
     tasks: '下载任务',
-    files: '文件管理'
+    files: '文件管理',
+    support: '支持项目'
 };
 
 const sourceStatusText = {
@@ -24,12 +25,30 @@ const taskStatusText = {
 };
 
 document.addEventListener('DOMContentLoaded', function() {
+    loadVersion();
     loadSources();
     loadSourcesForSearch();
     document.getElementById('search-keyword').addEventListener('keypress', function(e) {
         if (e.key === 'Enter') searchBooks();
     });
 });
+
+async function loadVersion() {
+    const pill = document.getElementById('version-pill');
+    if (!pill) return;
+
+    try {
+        const result = await (await fetch('/api/version')).json();
+        if (!result.success) throw new Error('version unavailable');
+        const version = result.data.version;
+        pill.textContent = `v${version}`;
+        pill.href = result.data.release;
+        pill.title = `当前版本 v${version}`;
+    } catch {
+        pill.textContent = '版本未知';
+        pill.href = 'https://github.com/HereisFrank9527/Z-Reader/releases';
+    }
+}
 
 function escapeHtml(value) {
     return String(value ?? '')

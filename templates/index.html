@@ -25,6 +25,7 @@
                 <button class="tab-btn" onclick="switchTab('sources', event)">书源</button>
                 <button class="tab-btn" onclick="switchTab('tasks', event)">任务</button>
                 <button class="tab-btn" onclick="switchTab('files', event)">文件</button>
+                <button class="tab-btn" onclick="switchTab('support', event)">支持</button>
             </nav>
         </aside>
 
@@ -34,7 +35,7 @@
                     <p class="eyebrow">Z Reader Lite</p>
                     <h2 id="page-title">搜索书籍</h2>
                 </div>
-                <div class="status-pill">Node.js</div>
+                <a class="status-pill" id="version-pill" href="https://github.com/HereisFrank9527/Z-Reader/releases" target="_blank" rel="noreferrer">检查版本中</a>
             </section>
 
             <div id="search-tab" class="tab-content active">
@@ -110,6 +111,30 @@
                         <button onclick="refreshFiles()" class="btn btn-secondary">刷新</button>
                     </div>
                     <div id="files-list" class="files-list"></div>
+                </section>
+            </div>
+
+            <div id="support-tab" class="tab-content">
+                <section class="panel support-panel">
+                    <div class="section-head">
+                        <div>
+                            <h3>支持项目</h3>
+                            <p>如果这个工具帮到了你，可以请作者喝杯咖啡。</p>
+                        </div>
+                    </div>
+                    <div class="support-content">
+                        <div class="support-copy">
+                            <h4>Buy me a cup of coffee</h4>
+                            <p>项目会继续维护书源、阅读体验和下载稳定性。感谢每一份支持。</p>
+                            <div class="release-note">
+                                <strong>Release 路径</strong>
+                                <span>当前 Node 重构版建议从 v2.0.0 开始发布正式版本；后续按 v2.0.1 修复、v2.1.0 功能、v3.0.0 破坏性变更推进。</span>
+                            </div>
+                        </div>
+                        <div class="support-qr">
+                            <img src="/static/pic.jpg" alt="捐赠二维码">
+                        </div>
+                    </div>
                 </section>
             </div>
         </main>

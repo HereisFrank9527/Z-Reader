@@ -153,6 +153,7 @@ select {
 .status-pill {
     color: var(--primary-dark);
     background: #e3f3f1;
+    text-decoration: none;
 }
 
 .tab-content {
@@ -204,6 +205,66 @@ select {
 .announcement h2,
 .announcement h3 {
     margin-top: 0;
+}
+
+.support-content {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 260px;
+    gap: 24px;
+    align-items: start;
+}
+
+.support-copy {
+    padding: 18px;
+    border: 1px solid var(--line);
+    border-radius: 8px;
+    background: var(--surface-soft);
+}
+
+.support-copy h4 {
+    margin: 0 0 8px;
+    font-size: 18px;
+}
+
+.support-copy p {
+    margin: 0;
+    color: var(--muted);
+    line-height: 1.7;
+}
+
+.release-note {
+    margin-top: 18px;
+    padding-top: 16px;
+    border-top: 1px solid var(--line);
+}
+
+.release-note strong,
+.release-note span {
+    display: block;
+}
+
+.release-note strong {
+    margin-bottom: 6px;
+}
+
+.release-note span {
+    color: var(--muted);
+    line-height: 1.7;
+}
+
+.support-qr {
+    padding: 14px;
+    border: 1px solid var(--line);
+    border-radius: 8px;
+    background: #fff;
+}
+
+.support-qr img {
+    display: block;
+    width: 100%;
+    aspect-ratio: 1;
+    object-fit: cover;
+    border-radius: 8px;
 }
 
 .search-form {
@@ -610,7 +671,7 @@ select {
     }
 
     .tabs {
-        grid-template-columns: repeat(4, 1fr);
+        grid-template-columns: repeat(5, 1fr);
     }
 
     .tab-btn {
@@ -624,7 +685,8 @@ select {
 
     .search-form,
     .form-grid,
-    .summary-grid {
+    .summary-grid,
+    .support-content {
         grid-template-columns: 1fr;
     }
 

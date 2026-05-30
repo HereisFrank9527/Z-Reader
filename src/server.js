@@ -11,6 +11,7 @@ import { runDownload } from './downloader.js';
 const app = express();
 const port = Number(process.env.PORT || 5000);
 const readerCache = new Map();
+const packageInfo = JSON.parse(await fs.readFile(path.join(process.cwd(), 'package.json'), 'utf8'));
 
 app.use(express.json({ limit: '1mb' }));
 app.use('/static', express.static(STATIC_DIR));
@@ -127,6 +128,18 @@ app.get('/api/sources', async (_req, res) => {
   } catch (error) {
     jsonError(res, `获取书源失败: ${error.message}`);
   }
+});
+
+app.get('/api/version', (_req, res) => {
+  res.json({
+    success: true,
+    data: {
+      name: packageInfo.name,
+      version: packageInfo.version,
+      repository: 'https://github.com/HereisFrank9527/Z-Reader',
+      release: `https://github.com/HereisFrank9527/Z-Reader/releases/tag/v${packageInfo.version}`
+    }
+  });
 });
 
 app.post('/api/sources/check', async (_req, res) => {
